@@ -9,7 +9,8 @@ import processing.data.TableRow;
 public class UI extends PApplet
 {
 	private ArrayList<Colour> colours = new ArrayList<Colour>();
-	private ArrayList<Resistor> resistors = new ArrayList<Resistor>();
+	//private ArrayList<Resistor> resistors = new ArrayList<Resistor>();
+	Resistor resistor;
 
 	public void separate(int value)
 	{
@@ -19,6 +20,8 @@ public class UI extends PApplet
 		print(hundreds + ",");
 		print(tens + ",");
 		println(ones);
+
+
 	}
 
 	public void settings()
@@ -33,15 +36,17 @@ public class UI extends PApplet
 	public void setup()
 	{
 		loadColours();
-		loadResistor();
 		printColours();
+		resistor = new Resistor(this);
+		// loadResistor();
+		// printResistor();
 	}
 
 	public void loadColours()
 	{
-		Table table = new loadTable("colours.csv", "header");
+		Table table = loadTable("colours.csv", "header");
 
-		for (TableRow Row : table.rows())
+		for (TableRow row : table.rows())
 		{
 			Colour c = new Colour();
 		}
@@ -55,18 +60,64 @@ public class UI extends PApplet
 		}
 	}
 
-	public void loadResistor()
+	public void findColours(int value)
 	{
-		Table resistors = new loadTable("resistor.csv", "header");
 
-		for (TableRow Row : table.rows())
-		{
-			Resistor r = new Resistor();
-		}
 	}
-	
+
+	// public void loadResistor()
+	// {
+	// 	Table table = loadTable("resistors.csv", "header");
+
+	// 	for (TableRow row : table.rows())
+	// 	{
+	// 		Resistor r = new Resistor();
+	// 	}
+	// }
+
+	// public void printResistor()
+	// {
+	// 	for (Resistor r : resistors)
+	// 	{
+	// 		System.out.println(r);
+	// 	}
+	// }
+	public int centre = 150;
+
+	public void render()
+	{
+		int middle = width / 2;
+        int girth = 50;
+        
+
+		stroke(0);
+		line(middle - 50, centre, middle - 100, centre);
+		line(middle + 50, centre, middle + 100, centre);
+
+		line(middle - 50, centre + girth, middle + 50, centre + girth);
+		line(middle - 50, centre - girth, middle + 50, centre - girth);
+
+		line(middle - 50, centre + girth, middle - 50, centre - girth);
+		line(middle + 50, centre + girth, middle + 50, centre - girth);
+
+		fill(165, 42, 42);
+		rect(middle - 40, centre - girth, 15, 100);
+		fill(100, 100, 100);
+		rect(middle - 20, centre - girth, 15, 100);
+		fill(255, 255, 0);
+		rect(middle, centre - girth, 15, 100);
+	}
+
+
 	public void draw()
-	{			
+	{
+		for(int i = 0; i < 4; i++)
+		{
+			//resistor.render();
+			render();
+			centre = centre + 150;
+		}	
+		
 
 	}
 }

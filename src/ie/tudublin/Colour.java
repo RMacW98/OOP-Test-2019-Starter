@@ -1,11 +1,5 @@
 package ie.tudublin;
 
-import java.util.ArrayList;
-
-import processing.core.PApplet;
-import processing.data.Table;
-import processing.data.TableRow;
-
 public class Colour
 {
     private String colour;
@@ -16,13 +10,11 @@ public class Colour
 
     public Colour()
     {
-
     }
-
-    String toString()
-    {
-        return colour + " " + r + " " + g + " " + b + " " + value;
-    }
+    // String toString()
+    // {
+    //     return colour;
+    // }
 
     /**
      * @return the colour

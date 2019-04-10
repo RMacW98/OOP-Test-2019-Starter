@@ -1,78 +1,41 @@
 package ie.tudublin;
 
-import java.util.ArrayList;
-
-import processing.core.PApplet;
-import processing.data.Table;
-import processing.data.TableRow;
-
 public class Resistor
 {
-    public int value;
-    public int ones;
-    public int tens;
-    public int hundreds;
+    public int r;
+    public int g;
+    public int b;
+    UI ui;
 
-    public Resistor()
+    public Resistor(UI ui)
     {
+        // r = this.r;
+        // g = this.g;
+        // b = this.b;
+        ui = this.ui;
+    }
+
+    public void render()
+	{
+        int centre = 150;
+		int middle = ui.width / 2;
+        int girth = 50;
         
-    }
 
-    /**
-     * @return the value
-     */
-    public int getValue() {
-        return value;
-    }
+		ui.stroke(0);
+		ui.line(middle - 50, centre, middle - 100, centre);
+		ui.line(middle + 50, centre, middle + 100, centre);
 
-    /**
-     * @param value the value to set
-     */
-    public void setValue(int value) {
-        this.value = value;
-    }
+		ui.line(middle - 50, centre + girth, middle + 50, centre + girth);
+		ui.line(middle - 50, centre - girth, middle + 50, centre - girth);
 
-    /**
-     * @return the ones
-     */
-    public int getOnes() {
-        return ones;
-    }
+		ui.line(middle - 50, centre + girth, middle - 50, centre - girth);
+		ui.line(middle + 50, centre + girth, middle + 50, centre - girth);
 
-    /**
-     * @param ones the ones to set
-     */
-    public void setOnes(int ones) {
-        this.ones = ones;
-    }
-
-    /**
-     * @return the tens
-     */
-    public int getTens() {
-        return tens;
-    }
-
-    /**
-     * @param tens the tens to set
-     */
-    public void setTens(int tens) {
-        this.tens = tens;
-    }
-
-    /**
-     * @return the hundreds
-     */
-    public int getHundreds() {
-        return hundreds;
-    }
-
-    /**
-     * @param hundreds the hundreds to set
-     */
-    public void setHundreds(int hundreds) {
-        this.hundreds = hundreds;
-    }
-
+		//fill();
+		ui.rect(middle - 40, centre - girth, 15, 100);
+		ui.rect(middle - 20, centre - girth, 15, 100);
+		ui.rect(middle, centre - girth, 15, 100);
+	}
 
 }
