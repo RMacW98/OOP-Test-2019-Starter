@@ -8,7 +8,10 @@ import processing.data.TableRow;
 
 public class Resistor
 {
-    float ohm;
+    public int value;
+    public int ones;
+    public int tens;
+    public int hundreds;
 
     public Resistor()
     {
@@ -16,17 +19,60 @@ public class Resistor
     }
 
     /**
-     * @return the ohm
+     * @return the value
      */
-    public float getOhm() {
-        return ohm;
+    public int getValue() {
+        return value;
     }
 
     /**
-     * @param ohm the ohm to set
+     * @param value the value to set
      */
-    public void setOhm(float ohm) {
-        this.ohm = ohm;
+    public void setValue(int value) {
+        this.value = value;
     }
+
+    /**
+     * @return the ones
+     */
+    public int getOnes() {
+        return ones;
+    }
+
+    /**
+     * @param ones the ones to set
+     */
+    public void setOnes(int ones) {
+        this.ones = ones;
+    }
+
+    /**
+     * @return the tens
+     */
+    public int getTens() {
+        return tens;
+    }
+
+    /**
+     * @param tens the tens to set
+     */
+    public void setTens(int tens) {
+        this.tens = tens;
+    }
+
+    /**
+     * @return the hundreds
+     */
+    public int getHundreds() {
+        return hundreds;
+    }
+
+    /**
+     * @param hundreds the hundreds to set
+     */
+    public void setHundreds(int hundreds) {
+        this.hundreds = hundreds;
+    }
+
 
 }

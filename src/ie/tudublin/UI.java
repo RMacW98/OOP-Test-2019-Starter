@@ -32,30 +32,41 @@ public class UI extends PApplet
 
 	public void setup()
 	{
-		loadColour();
+		loadColours();
+		loadResistor();
+		printColours();
 	}
 
-	public void loadColour()
+	public void loadColours()
 	{
-		Table colours = new loadTable("colours.cvs", "header");
+		Table table = new loadTable("colours.csv", "header");
 
 		for (TableRow Row : table.rows())
 		{
-			Colour colours = new Colour();
+			Colour c = new Colour();
+		}
+	}
+
+	public void printColours()
+	{
+		for (Colour c : colours)
+		{
+			System.out.println(c);
 		}
 	}
 
 	public void loadResistor()
 	{
-		Table colours = new loadTable("resistor.cvs", "header");
+		Table resistors = new loadTable("resistor.csv", "header");
 
 		for (TableRow Row : table.rows())
 		{
-			Colour resistor = new Resistor();
+			Resistor r = new Resistor();
 		}
 	}
 	
 	public void draw()
 	{			
+
 	}
 }

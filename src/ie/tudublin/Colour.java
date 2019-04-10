@@ -6,21 +6,17 @@ import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
 
-public class Colours
+public class Colour
 {
-    String colour;
-    int r;
-    int g;
-    int b;
-    int value;
+    private String colour;
+    public int r;
+    public int g;
+    public int b;
+    public int value;
 
-    public Colours(String colour, int r, int g, int b, int value)
+    public Colour()
     {
-        colour = this.colour;
-        r = this.r;   
-        g = this.g;
-        b = this.b;
-        value = this.value;
+
     }
 
     String toString()
